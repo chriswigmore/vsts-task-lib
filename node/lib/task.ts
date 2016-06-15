@@ -591,6 +591,47 @@ export function exist(path: string): boolean {
 }
 
 /**
+ * Reads a directory's contents.
+ * see [fs.readdirsync](https://nodejs.org/api/fs.html#fs_fs_readdirsync_path_options)
+ * 
+ * @param       path    path of directory to readdirSync
+ * @returns     array of directory contents
+ */
+export function readdirSync(path: string): string[] {
+    return fs.readdirSync(path);
+}
+
+/**
+ * Deletes the specified file.
+ * see [fs.unlinkSync](https://nodejs.org/api/fs.html#fs_fs_unlinksync_path)
+ * 
+ * @param        path   path of the file to delete
+ */
+export function unlinkSync(path: string): void {
+    fs.unlinkSync(path);
+}
+
+/**
+ * Useful for determining the host operating system.
+ * see [os.type](https://nodejs.org/api/os.html#os_os_type)
+ * 
+ * @return      the name of the operating system
+ */
+export function osType(): string {
+    return os.type();
+}
+
+/**
+ * Returns the process's current working directory.
+ * see [process.cwd](https://nodejs.org/api/process.html#process_process_cwd)
+ * 
+ * @return      the path to the current working directory of the process
+ */
+export function processCwd() : string {
+    return process.cwd();
+}
+
+/**
  * Checks whether a path exists.
  * If the path does not exist, the task will fail with an error message. Execution will halt.
  * 
